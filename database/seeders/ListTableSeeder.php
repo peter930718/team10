@@ -521,5 +521,6 @@ class ListTableSeeder extends Seeder
             ],
             //...依此類推，為每組資料新增陣列
         ]);
+        DB::table('oberservation')->insert($articles);
     }
 }

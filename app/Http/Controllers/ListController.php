@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\oberservation;
 
 class ListController extends Controller
 {
@@ -13,8 +14,8 @@ class ListController extends Controller
      */
     public function index()
     {
-        //
-        return "重製";
+        $oberservations= oberservation::all();
+        return view('intro-sdgs', compact('oberservations'));
     }
 
     /**
