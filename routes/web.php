@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ListController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('list',[ListController::class, 'index']);
+Route::get('/', [ListController::class, 'index']);

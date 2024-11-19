@@ -1,8 +1,0 @@
-$table->id();
-            $table->integer(column: 'recruitment_year')->comment(comment: '徵求年度');
-            $table->integer(column: 'application_start_date')->comment(comment: '申請開始日');
-            $table->integer(column: 'application_end_date')->comment(comment: '申請截止日');
-            $table->string(column: 'project_name')->comment(comment: '計畫名稱');
-            $table->string(column: 'country')->comment(comment: '國家');
-            $table->string(column: 'partner_agency')->comment(comment: '協議機構');
-            $table->timestamps();
