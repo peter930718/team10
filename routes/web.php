@@ -15,6 +15,4 @@ use App\Http\Controllers\Controllers;
 |
 */
 
-Route::get('/', function () {
-    return view('intro-sdgs');
-});
+Route::get('/', [ListController::class, 'index']);

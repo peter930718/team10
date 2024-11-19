@@ -64,7 +64,7 @@
     </div>
     <div>
     <table border="1">
-        @foreach ($oberservations->slice(0.25) as $Oberservation)
+        @foreach ($oberservations as $oberservation)
         <tr>
             <td>{{$oberservation->recruitment_year}}</td>
             <td>{{$oberservation->application_start_date}}</td>
