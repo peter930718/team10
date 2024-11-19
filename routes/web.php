@@ -16,8 +16,5 @@ use App\Http\Controllers\Controllers;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('intro-sdgs');
 });
-
-Route::get('oberservations',[ListController::class, 'index']
-);
