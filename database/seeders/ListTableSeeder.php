@@ -519,8 +519,17 @@ class ListTableSeeder extends Seeder
                 'country' => '德國',
                 'agreement_agency' => '',
             ],
+            $articles[]=[
+                'recruitment_year' => $recruitment_year,
+                'application_start_date' => $application_start_date,
+                'application_deadline' => $application_deadline,
+                'project_name' => $project_name,
+                'country' => $country,
+                'agreement_agency' => $agreement_agency,
+            ];
             //...依此類推，為每組資料新增陣列
         ]);
         DB::table('oberservation')->insert($articles);
+
     }
 }

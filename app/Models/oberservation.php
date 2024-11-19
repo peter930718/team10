@@ -9,5 +9,5 @@ class oberservation extends Model
 {
     use HasFactory;
 
-    protected $table = "oberservation";
+    protected $table = "list";
 }

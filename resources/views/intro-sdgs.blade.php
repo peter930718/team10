@@ -66,12 +66,12 @@
     <table border="1">
         @foreach ($oberservations->slice(0.25) as $Oberservation)
         <tr>
-            <td>{{$oberservations->recruitment_year}}</td>
-            <td>{{$oberservations->application_start_date}}</td>
-            <td>{{$oberservations->application_deadline}}</td>
-            <td>{{$oberservations->project_name}}</td>
-            <td>{{$oberservations->country}}</td>
-            <td>{{$oberservations->agreement_agency}}</td>
+            <td>{{$oberservation->recruitment_year}}</td>
+            <td>{{$oberservation->application_start_date}}</td>
+            <td>{{$oberservation->application_deadline}}</td>
+            <td>{{$oberservation->project_name}}</td>
+            <td>{{$oberservation->country}}</td>
+            <td>{{$oberservation->agreement_agency}}</td>
         </tr>
         @endforeach
     </table>
