@@ -15,12 +15,12 @@ class CreateListTable extends Migration
     {
         Schema::create('list', function (Blueprint $table) {
             $table->id();
-            $table->integer('recruitment year')->comment('徵求年度');
-            $table->string('application start date')->comment('申請開始日');
-            $table->string('application deadline')->comment('申請截止日');
-            $table->string('project name')->comment('計畫名稱');
+            $table->integer('recruitment_year')->comment('徵求年度');
+            $table->string('application_start_date')->comment('申請開始日');
+            $table->string('application_deadline')->comment('申請截止日');
+            $table->string('project_name')->comment('計畫名稱');
             $table->string('country')->comment('國家');
-            $table->string('agreement agency')->comment('協議機構');
+            $table->string('agreement_agency')->comment('協議機構');
             $table->timestamps();
         });
     }

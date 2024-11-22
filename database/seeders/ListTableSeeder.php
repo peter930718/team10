@@ -23,14 +23,124 @@ class ListTableSeeder extends Seeder
         return $randomString;
     }
     public function generateRandomName() {
-        $first_name = $this->generateRandomString(rand(2, 15));
-        $first_name = strtolower($first_name);
-        $first_name = ucfirst($first_name);
-        $last_name = $this->generateRandomString(rand(2, 15));
-        $last_name = strtolower($last_name);
-        $last_name = ucfirst($last_name);
-        $name = $first_name . " ". $last_name;
-        return $name;
+        $startdate = $this->generateRandomString(rand(2, 15));
+        $startdate = strtolower($startdate);
+        $startdate = ucfirst($startdate);        
+        return $startdate;
+        $endyear = $this->generateRandomString(rand(2, 15));
+        $endyear = strtolower($endyear);
+        $endyear = ucfirst($endyear);
+        return $endyear;
+    }
+    public function generateRandomStartYear(){
+        $startyears = array();
+        $startyears[] = '2020/8/7';
+        $startyears[] = '2021/1/1';
+        $startyears[] = '2022/9/29';
+        $startyears[] = '2022/10/3';
+        $startyears[] = '2022/10/20';
+        $startyears[] = '2022/11/3';
+        $startyears[] = '2022/11/15';
+        $startyears[] = '2022/12/9';
+        $startyears[] = '2022/12/28';
+        $startyears[] = '2022/12/29';
+        $startyears[] = '2023/1/3';
+        $startyears[] = '2023/1/12';
+        $startyears[] = '2023/1/16';
+        $startyears[] = '2023/2/10';
+        $startyears[] = '2023/2/13';
+        $startyears[] = '2023/2/24';
+        $startyears[] = '2023/3/1';
+        $startyears[] = '2023/3/7';
+        $startyears[] = '2023/3/10';
+        $startyears[] = '2023/3/31';
+        $startyears[] = '2023/4/1';
+        $startyears[] = '2023/4/3';
+        $startyears[] = '2023/4/5';
+        $startyears[] = '2023/4/11';
+        $startyears[] = '2023/5/4';
+        $startyears[] = '2023/5/9';
+        $startyears[] = '2023/5/18';
+        $startyears[] = '2023/5/29';
+        $startyears[] = '2023/6/1';
+        $startyears[] = '2023/6/5';
+        $startyears[] = '2023/6/12';
+        $startyears[] = '2023/7/6';
+        $startyears[] = '2023/7/12';
+        $startyears[] = '2023/8/2';
+        $startyears[] = '2023/8/4';
+        $startyears[] = '2023/8/23';
+        $startyears[] = '2023/9/6';
+        $startyears[] = '2023/9/7';
+        $startyears[] = '2023/9/11';
+        $startyears[] = '2023/9/14';
+        $startyears[] = '2023/11/1';
+        $startyears[] = '2023/11/3';
+        $startyears[] = '2023/11/14';
+        $startyears[] = '2023/11/15';
+        $startyears[] = '2023/12/8';
+        $startyears[] = '2023/12/18';
+        $startyears[] = '隨到隨審';
+
+        
+        return $startyears[rand(0, count($startyears)-1)];
+    }
+    public function generateRandomEndYear(){
+        $endyears = array();
+        $endyears[] = '2023/12/31';
+        $endyears[] = '2027/12/31';
+        $endyears[] = '2023/1/17';
+        $endyears[] = '2023/3/23';
+        $endyears[] = '2023/1/3';
+        $endyears[] = '2023/2/2';
+        $endyears[] = '2023/2/7';
+        $endyears[] = '2023/2/15';
+        $endyears[] = '2023/3/7';
+        $endyears[] = '2023/3/14';
+        $endyears[] = '2023/5/4';
+        $endyears[] = '2023/4/27';
+        $endyears[] = '2023/2/24';
+        $endyears[] = '2023/4/17';
+        $endyears[] = '2023/3/30';
+        $endyears[] = '2023/4/28';
+        $endyears[] = '2023/5/15';
+        $endyears[] = '2023/3/31';
+        $endyears[] = '2023/5/2';
+        $endyears[] = '2023/4/6';
+        $endyears[] = '2023/3/24';
+        $endyears[] = '2023/5/1';
+        $endyears[] = '2023/5/16';
+        $endyears[] = '2023/6/1';
+        $endyears[] = '2023/7/14';
+        $endyears[] = '2023/6/19';
+        $endyears[] = '2023/7/31';
+        $endyears[] = '2023/6/12';
+        $endyears[] = '2023/5/26';
+        $endyears[] = '2023/6/16';
+        $endyears[] = '2023/6/21';
+        $endyears[] = '2023/7/21';
+        $endyears[] = '2023/7/19';
+        $endyears[] = '2023/9/18';
+        $endyears[] = '2023/7/28';
+        $endyears[] = '2023/9/15';
+        $endyears[] = '2023/9/28';
+        $endyears[] = '2023/9/5';
+        $endyears[] = '2023/9/27';
+        $endyears[] = '2023/10/2';
+        $endyears[] = '2023/9/20';
+        $endyears[] = '2023/11/8';
+        $endyears[] = '2023/10/26';
+        $endyears[] = '2023/11/10';
+        $endyears[] = '2023/10/19';
+        $endyears[] = '2024/2/1';
+        $endyears[] = '2024/1/15';
+        $endyears[] = '2024/1/30';
+        $endyears[] = '2024/2/21';
+        $endyears[] = '2024/3/20';
+        $endyears[] = '2024/2/22';
+        $endyears[] = '隨到隨審';
+
+        return $endyears[rand(0, count($endyears)-1)];
     }
     public function generateRandomProject() {
         $projects = array();
@@ -117,39 +227,79 @@ class ListTableSeeder extends Seeder
         $countryes[] = '日本';
         $countryes[] = '東南亞、南亞、中東、大洋洲、中南美洲等區域發展中國家';
         $countryes[] = '歐盟';
-        $countryes = '法國';
-        $countryes = '波蘭';
-        $countryes = '芬蘭';
+        $countryes[]= '法國';
+        $countryes[]= '波蘭';
+        $countryes[]= '芬蘭';
         $countryes[] = '英國';
         $countryes[] = '菲律賓';
         $countryes[] = '蒙古';
         $countryes[] = '西班牙';
         $countryes[] = '韓國';
 
-
-
-
         return $countryes[rand(0, count($countryes)-1)];
+
+    }
+    public function generateRandomAgreement(){
+        $agreement = array();
+        $agreement[] = '美國國家科學基金會(NSF)';
+        $agreement[] = '歐盟';
+        $agreement[] = '法國國家癌症研究院(INCa)';
+        $agreement[] = '愛沙尼亞研究委員會(ETAG)';
+        $agreement[] = '英國經濟暨社會研究委員會';
+        $agreement[] = '德國國家研究基金會(DFG)';
+        $agreement[] = '以色列科技部';
+        $agreement[] = '西班牙國家高等科學研究委員會(CSIC)';
+        $agreement[] = '德國學術交流總署(DAAD)';
+        $agreement[] = '日本國立研究開發法人理化學研究所(RIKEN)';
+        $agreement[] = '英國自然環境研究委員會(NERC)';
+        $agreement[] = '蒙古教育文化科學體育(MECSS)及蒙古科學技術基金會(MFST)';
+        $agreement[] = '菲律賓科技部(DOST)';
+        $agreement[] = '法國國家研究總署(ANR)';
+        $agreement[] = '拉脫維亞、立陶宛教育及科學部';
+        $agreement[] = '捷克科學基金會(GACR)';
+        $agreement[] = '印度教育部社會科學研究委員會(ICSSR)';
+        $agreement[] = '法國在台協會(BFT)';
+        $agreement[] = '法蘭西學院自然科學院(ADS)';
+        $agreement[] = '日本國立研究開發法人科學技術振興機構(JST)';
+        $agreement[] = '捷克科研院(CAS)';
+        $agreement[] = '斯洛伐克科學院(SAS)';
+        $agreement[] = '波蘭科學院(PAS)';
+        $agreement[] = '韓國國家研究基金會(NRF)';
+        $agreement[] = '波蘭國家研究發展中心(NCBR)';
+        $agreement[] = '保加利亞科學院(BAS)';
+        $agreement[] = '捷克技術署(TACR)';
+        $agreement[] = '匈牙利科學院(HAS)';
+        $agreement[] = '印度科技部(DST)';
+        $agreement[] = '法國國家健康與醫學研究院(INSERM)';
+        $agreement[] = '日本台灣交流協會';
+        $agreement[] = '法國國家科學研究院(CNRS)';
+        $agreement[] = '德國聯邦教育及研究部(BMBF)';
+        $agreement[] = '英國皇家學會(RS)';
+        $agreement[] = '法國格列諾柏大學(協辦)';
+        $agreement[] = '芬蘭科學院(AKA)';
+        $agreement[] = '英國國家學術院(BA)';
+        $agreement[] = '英國愛丁堡皇家學會 (RSE)';
+
+        return $agreement[rand(0, count($agreement)-1)];
 
     }
 
     public function run()
     {
-        $firstNames = array('John', 'Mary', 'James', 'Elizabeth', 'Robert', 'Jennifer', 'Michael', 'Linda', 'William', 'Barbara', 'David', 'Patricia', 'Richard', 'Jessica', 'Joseph', 'Susan', 'Thomas', 'Margaret', 'Charles', 'Sarah', 'Christopher', 'Karen', 'Daniel', 'Nancy', 'Matthew', 'Lisa', 'Anthony', 'Betty', 'Mark', 'Dorothy', 'Donald', 'Sandra', 'Steven', 'Ashley', 'Paul', 'Kimberly', 'Andrew', 'Emily', 'Joshua', 'Donna', 'Kenneth', 'Michelle', 'Kevin', 'Carol', 'Brian', 'Amanda', 'George', 'Melissa', 'Edward', 'Deborah', 'Ronald', 'Stephanie', 'Timothy', 'Rebecca', 'Jason', 'Laura', 'Jeffrey', 'Helen', 'Ryan', 'Sharon', 'Jacob', 'Cynthia', 'Gary', 'Kathleen', 'Nicholas', 'Amy', 'Eric', 'Shirley', 'Jonathan', 'Angela', 'Stephen', 'Anna', 'Larry', 'Brenda', 'Justin', 'Pamela', 'Scott', 'Nicole', 'Brandon', 'Emma', 'Benjamin', 'Samantha', 'Samuel', 'Katherine', 'Gregory', 'Christine', 'Frank', 'Debra', 'Alexander', 'Rachel', 'Raymond', 'Catherine', 'Patrick', 'Carolyn', 'Jack', 'Janet', 'Dennis', 'Ruth', 'Jerry', 'Maria', 'Tyler', 'Heather', 'Aaron', 'Diane', 'Jose', 'Virginia', 'Adam', 'Julie', 'Henry', 'Joyce', 'Nathan', 'Victoria', 'Douglas', 'Olivia', 'Zachary', 'Kelly', 'Peter', 'Christina', 'Kyle', 'Lauren', 'Walter', 'Joan', 'Ethan', 'Evelyn', 'Jeremy', 'Judith', 'Harold', 'Megan', 'Christian', 'Cheryl', 'Noah', 'Andrea', 'Gerald', 'Hannah', 'Keith', 'Martha', 'Roger', 'Jacqueline', 'Arthur', 'Frances', 'Lawrence', 'Gloria', 'Dylan', 'Teresa', 'Austin', 'Kathryn', 'Joe', 'Sara', 'Jesse', 'Janice', 'Albert', 'Jean', 'Bryan', 'Alice', 'Billy', 'Doris', 'Bruce', 'Abigail', 'Willie', 'Julia', 'Jordan', 'Judy', 'Alan', 'Rose', 'Ralph', 'Ann', 'Roy', 'Beverly', 'Juan', 'Denise', 'Wayne', 'Amber');
-        $lastNames = array('Smith', 'Johnson', 'Williams', 'Jones', 'Brown', 'Davis', 'Miller', 'Wilson', 'Moore', 'Taylor', 'Anderson', 'Thomas', 'Jackson', 'White', 'Harris', 'Martin', 'Thompson', 'Garcia', 'Martinez', 'Robinson', 'Clark', 'Rodriguez', 'Lewis', 'Lee', 'Walker', 'Hall', 'Allen', 'Young', 'Hernandez', 'King', 'Wright', 'Lopez', 'Hill', 'Scott', 'Green', 'Adams', 'Baker', 'Gonzalez', 'Nelson', 'Carter', 'Mitchell', 'Perez', 'Roberts', 'Turner', 'Phillips', 'Campbell', 'Parker', 'Evans', 'Edwards', 'Collins', 'Stewart', 'Sanchez', 'Morris', 'Rogers', 'Reed', 'Cook', 'Morgan', 'Bell', 'Murphy', 'Bailey', 'Rivera', 'Cooper', 'Richardson', 'Cox', 'Howard', 'Ward', 'Torres', 'Peterson', 'Gray', 'Ramirez', 'James', 'Watson', 'Brooks', 'Kelly', 'Sanders', 'Price', 'Bennett', 'Wood', 'Barnes', 'Ross', 'Henderson', 'Coleman', 'Jenkins', 'Perry', 'Powell', 'Long', 'Patterson', 'Hughes', 'Flores', 'Washington', 'Butler', 'Simmons', 'Foster', 'Gonzales', 'Bryant', 'Alexander', 'Russell', 'Griffin', 'Diaz', 'Hayes');
         for ($i=0; $i<500; $i++)
         {
-            $application_start_date = $firstNames[array_rand($firstNames)];
-            $$application_deadline = $lastNames[array_rand($lastNames)];
+            $application_start_date = $this->generateRandomStartYear();
+            $application_deadline = $this->generateRandomEndYear();
             $project_name = $this->generateRandomProject();
             $country = $this->generateRandomCountry();
+            $agreement_agency = $this->generateRandomAgreement();
             DB::table('list')->insert([
-                    'recruitment_year' => $recruitment_year,
+                    'recruitment_year' => rand(2020, 2023),
                     'application_start_date' => $application_start_date,
                     'application_deadline' => $application_deadline,
                     'project_name' => $project_name,
                     'country' => $country,
-                    'agreement_agency' => $agreement_agency,
+                    'agreement_agency' => $agreement_agency
                 ]);
         }
     }

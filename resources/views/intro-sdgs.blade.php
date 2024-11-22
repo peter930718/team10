@@ -16,21 +16,15 @@
             margin:0px;
             text-align: left;
             color: #fff;
-            background: linear-gradient(90deg, rgba(2,0,36,1) 0%,rgba(80,9,121,0.835154));
+            background: linear-gradient(90deg, rgb(176, 175, 204) 0%,rgba(121, 74, 148, 0.835));
             font-size: 30px;
         }
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: #21effd;
+            line-height:30px;
+            margin: 10px;
+            background-color: #ffffff;
             background-size:cover;
-        }
-        h1 {
-            
-        }
-        h2 {
-            color: #555;
         }
         p {
             margin: 10px 0;
@@ -42,6 +36,7 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+
     </style>
 </head>
 <body>
@@ -63,16 +58,14 @@
         </ul>
     </div>
     <div>
-    <table border="1">
-        @foreach ($oberservations as $oberservation)
-        <tr>
+    <table border="1" style="font-size: 15px;">
+        @foreach ($oberservations->slice(0,5) as  $oberservation)
             <td>{{$oberservation->recruitment_year}}</td>
             <td>{{$oberservation->application_start_date}}</td>
             <td>{{$oberservation->application_deadline}}</td>
             <td>{{$oberservation->project_name}}</td>
             <td>{{$oberservation->country}}</td>
             <td>{{$oberservation->agreement_agency}}</td>
-        </tr>
         @endforeach
     </table>
     </div>
