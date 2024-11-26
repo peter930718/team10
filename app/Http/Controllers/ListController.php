@@ -15,7 +15,7 @@ class ListController extends Controller
     public function index()
     {
         $oberservations = oberservation::all();
-        return view('intro-sdgs', compact('oberservations'));
+        return view('intro-sdgs/intro-sdgs', compact('oberservations'));
     }
 
     /**
