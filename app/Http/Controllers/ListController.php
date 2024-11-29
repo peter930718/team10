@@ -47,7 +47,8 @@ class ListController extends Controller
      */
     public function show($id)
     {
-        //
+        $oberservations = Oberservation::findOrFail($id);
+        return view('oberservation.show')->with('oberservation', $oberservations);
     }
 
     /**

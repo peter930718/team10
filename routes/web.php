@@ -15,4 +15,5 @@ use App\Http\Controllers\Controllers;
 |
 */
 
-Route::get('/', [ListController::class, 'index']);
+Route::get('oberservation', [ListController::class, 'index'])->name('oberservation.index');
+Route::get('oberservation/{id}', [ListController::class, 'show'])->where('id', '[0-9]+')->name('oberservation.show');
