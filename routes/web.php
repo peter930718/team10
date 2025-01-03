@@ -50,3 +50,7 @@ Route::delete('oberservation/delete/{id}', [ListController::class, 'destroy'])
     ->where('id', '[0-9]+')
     ->name('oberservation.destroy');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
