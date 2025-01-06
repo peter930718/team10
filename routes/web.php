@@ -19,7 +19,7 @@ Route::get(
     '/',    // 第一個參數
     function () // 第二個參數
     {
-        return view('intro-sdgs'); // 引導至一份視圖(view)：welcome view
+        return view('app'); // 引導至一份視圖(view)：welcome view
     }
 );
 
