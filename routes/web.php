@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ListController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,38 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get(
+    '/',    // 第一個參數
+    function () // 第二個參數
+    {
+        return view('app'); // 引導至一份視圖(view)：welcome view
+    }
+);
+
+
+// 儲存一筆資料
+Route::post('oberservations/store', [ListController::class, 'store'])
+    ->name('oberservation.store');
+# 新增表單
+Route::get('oberservations/create', [ListController::class, 'create'])
+    ->name('oberservation.create');
+# 查詢資料
+Route::get('oberservations', [ListController::class, 'index'])
+    ->name('oberservation.index');
+# 顯示特定一筆資料的詳細資料
+Route::get('oberservations/{id}', [ListController::class, 'show'])
+    ->where('id', '[0-9]+')
+    ->name('oberservation.show');
+# 編輯特定一筆資料
+Route::get('oberservations/{id}/edit', [ListController::class, 'edit'])
+    ->where('id', '[0-9]+')
+    ->name('oberservation.edit');
+// 修改資料
+Route::patch('oberservations/update/{id}', [ListController::class, 'update'])
+    ->where('id', '[0-9]+')
+    ->name('oberservation.update');
+# 刪除特定一筆資料
+Route::delete('oberservations/delete/{id}', [ListController::class, 'destroy'])
+    ->where('id', '[0-9]+')
+    ->name('oberservation.destroy');
+
