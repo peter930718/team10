@@ -104,6 +104,9 @@
                     @include('header')
                 </div>
                 <div>
+                    @yield('sdg_theme')
+                </div>
+                <div>
                     @yield('sdg_contents')
                 </div>
             </div>

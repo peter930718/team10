@@ -58,8 +58,8 @@ class ListController extends Controller
      */
     public function show($id)
     {
-        $oberservations = oberservation::findOrFail($id);
-        return view('oberservation.show')->with('oberservation', $oberservations);
+        $oberservation = oberservation::findOrFail($id);
+        return view('oberservation.show')->with('oberservation', $oberservation);
     }
 
     /**
@@ -70,8 +70,8 @@ class ListController extends Controller
      */
     public function edit($id)
     {
-        $oberservations = oberservation::findOrFail($id);
-        return view("oberservation.edit")->with('oberservation', $oberservations);
+        $oberservation = oberservation::findOrFail($id);
+        return view("oberservation.edit")->with('oberservation', $oberservation);
     }
 
     /**
@@ -83,7 +83,7 @@ class ListController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $oberservations = oberservation::findOrFail($id);
+        $oberservation = oberservation::findOrFail($id);
 
         $data = $request->only([
             'recruitment_year',
@@ -95,12 +95,12 @@ class ListController extends Controller
         ]);
 
         // Update the model's attributes
-        $oberservations->fill($data);
+        $oberservation->fill($data);
 
         // Save the changes to the database
-        $oberservations->save();
+        $oberservation->save();
 
-        return redirect('oberservation');
+        return redirect('oberservations');
 
     }
 
@@ -112,8 +112,8 @@ class ListController extends Controller
      */
     public function destroy($id)
     {
-        $oberservations = oberservation::findOrFail($id);
-        $oberservations->delete();
-        return redirect('oberservation'); // 觸發一組路由 observations
+        $oberservation = oberservation::findOrFail($id);
+        $oberservation->delete();
+        return redirect('oberservations'); // 觸發一組路由 observations
     }
 }
