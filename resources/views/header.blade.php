@@ -1,16 +1,16 @@
+
 <header>
     <h1>網頁首頁</h1>
     <div class="nav-buttons">
         <div class="dropdown">
-            <button>Menu 1</button>
+            <button>帳號相關</button>
             <div class="dropdown-content">
-                <a href="#">Option 1.1</a>
-                <a href="#">Option 1.2</a>
-                <a href="#">Option 1.3</a>
+                <a href="#">Option 2.1</a>
+
             </div>
         </div>
         <div class="dropdown">
-            <button>Menu 2</button>
+            <button>計畫背景</button>
             <div class="dropdown-content">
                 <a href="#">Option 2.1</a>
                 <a href="#">Option 2.2</a>
@@ -34,4 +34,6 @@
             </div>
         </div>
     </div>
+
+
 </header>

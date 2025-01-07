@@ -1,87 +1,6 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>國際合作網頁</title>
 
-    <link rel="stylesheet" href="/DataTables/datatables.css" />
-    <script src="/DataTables/datatables.js"></script>
-    <header>
-        <h1 >國際合作網頁</h1>
-    </header>
-    <style>
-        header{
-            text-shadow: 3px 3px 1px black;
-            line-height: 2.0;
-            margin:0px;
-            text-align: left;
-            color: #fff;
-            background: linear-gradient(90deg, rgb(176, 175, 204) 0%,rgba(121, 74, 148, 0.835));
-            font-size: 32px;
-        }
-        .main{
-            display: flex;
-            margin: 10px;
-        }
-        .mainleft{
-            display: flex;
-            flex: none;
-            flex-direction: column;
-            width: 30%;
-            height: 700px;
-            padding: 15px;
-            border-radius: 15px;
-            background-color: #ffffff;
-        }
-        .mainright{
-            display: flex;
-            flex: auto;
-            padding: 15px;
-            border-radius: 15px;
-            background-color: #ffffff;
+@extends('app')
 
-        }
-        body {
-            font-family: Arial, sans-serif;
-            line-height:30px;
-            margin: 0px;
-            padding: 0px;
-            background-color: #d8d4d4;
-        }
-
-        p {
-            margin: 10px 0;
-        }
-        .timeline {
-            text-align: left;
-            flex-direction: column;
-            background: #fff;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .tablelist{
-            border-collapse: collapse;
-            overflow: hidden;
-            width: 50%;
-            margin-top: auto;
-            float: right;
-            padding: 15px;
-            border-radius: 15px;
-
-        }
-
-        footer{
-        height: 80px;
-        text-shadow: 2px 2px 0.5px black;
-        clear: both;
-        text-align: center;
-        color: #fff;
-        background: linear-gradient(90deg, rgb(176, 175, 204) 0%,rgba(121, 74, 148, 0.835));
-        }
-    </style>
-</head>
 <body>
     <div class="main">
         <div class="mainleft" style="background: #fff;flex:auto;" >
@@ -124,12 +43,3 @@
 
 
 </body>
-<footer>
-<div class="clear: both;text-align: center;">
-    <div class="footer;">
-        歡迎來到D1114182061的網站
-    </div>
-</div>
-
-</footer>
-</html>

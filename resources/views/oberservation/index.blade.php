@@ -22,9 +22,17 @@
             <td>{{$oberservation->project_name}}</td>
             <td>{{$oberservation->country}}</td>
             <td>{{$oberservation->agreement_agency}}</td>
-            </tr>
-                <td><a href="{{ route('oberservation.show', ['id' => $oberservation->id]) }}">顯示</a></td>
-                <td><a href="{{ route('oberservation.edit', ['id' => $oberservation->id]) }}">編輯</a></td>
+            <td><a href="{{ route('oberservation.show', ['id' => $oberservation->id]) }}">顯示</a></td>
+            <td><a href="{{ route('oberservation.edit', ['id' => $oberservation->id]) }}">編輯</a></td>
+            <td><a href="{{ route('observations.show', ['id' => $observation->id]) }}">顯示</a></td>
+            <td><a href="{{ route('observations.edit', ['id' => $observation->id]) }}">編輯</a></td>
+            <td>
+                <form action="{{ url('/oberservation/delete', ['id' => $oberservation->id]) }}" method="post">
+                    <input class="btn btn-default" type="submit" value="刪除" />
+                    @method('delete')
+                    @csrf
+                </form>
+            </td>
             </tr>
         @endforeach
     </table>

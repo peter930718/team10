@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>@yield('title')</title>
-    <style>
 
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -37,22 +41,28 @@
             padding: 10px 15px;
             cursor: pointer;
             font-size: 16px;
+            border-radius: 8px; /* 增加圓角 */
+            transition: transform 0.2s ease, background-color 0.2s ease;
         }
 
         .nav-buttons button:hover {
             background-color: #555;
+            transform: scale(0.95); /* 凹進效果 */
         }
 
         .dropdown-content {
-            display: none;
             position: absolute;
             background-color: white;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
             z-index: 1;
             margin-top: 5px;
             min-width: 150px;
-            border-radius: 4px;
+            border-radius: 4px; /* 表單內容也有圓角 */
             overflow: hidden;
+            max-height: 0; /* 初始高度為 0 */
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease;
         }
 
         .dropdown-content a {
@@ -66,8 +76,10 @@
             background-color: #f1f1f1;
         }
 
-        .dropdown:hover .dropdown-content {
-            display: block;
+        .dropdown.open .dropdown-content {
+            opacity: 1;
+            transform: translateY(0);
+            max-height: 500px; /* 足夠的高度來顯示內容 */
         }
 
         footer {
@@ -80,46 +92,58 @@
             bottom: 0;
         }
     </style>
-
-
-
 </head>
+
 <body class="antialiased">
 <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-    @if (Route::has('login'))
-        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-            @auth
-                <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
-            @else
-                <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
-
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                @endif
-            @endif
-        </div>
-    @endif
 
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-        <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-            <img src={{ URL::asset('images/sdg14_banner.png') }} width="100%"/>
-        </div>
-        <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-            <div class="grid grid-cols-2 md:grid-cols-1">
-                <div class="p-6">
+        <div>
+            <div>
+                <div>
                     @include('header')
                 </div>
-                <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                    @yield('sdg_theme')
-                </div>
-                <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
+                <div>
                     @yield('sdg_contents')
                 </div>
             </div>
+
         </div>
 
         @include('footer')
     </div>
 </div>
+
+<!-- JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        dropdowns.forEach(dropdown => {
+            const button = dropdown.querySelector('button');
+            const content = dropdown.querySelector('.dropdown-content');
+
+            button.addEventListener('click', () => {
+                // 切換 open class
+                dropdown.classList.toggle('open');
+
+                // 確保只有一個下拉表單展開
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove('open');
+                    }
+                });
+            });
+
+            // 點擊頁面其他區域時關閉表單
+            document.addEventListener('click', (e) => {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove('open');
+                }
+            });
+        });
+    });
+</script>
+
 </body>
 </html>

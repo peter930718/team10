@@ -15,7 +15,7 @@ class ListController extends Controller
     public function index()
     {
         $oberservations = oberservation::all();
-        return view('intro-sdgs/intro-sdgs', compact('oberservations'));
+        return view('oberservation.index')->with('oberservations', $oberservations);
     }
 
     /**
@@ -25,7 +25,7 @@ class ListController extends Controller
      */
     public function create()
     {
-        //
+            return view("oberservation.create");
     }
 
     /**
@@ -36,7 +36,18 @@ class ListController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only([
+            'recruitment_year',
+            'application_start_date',
+            'application_deadline',
+            'project_name',
+            'country',
+            'agreement_agency',
+        ]);
+
+        $oberservations = oberservation::create($data);
+
+        return redirect('oberservation');
     }
 
     /**
@@ -47,7 +58,7 @@ class ListController extends Controller
      */
     public function show($id)
     {
-        $oberservations = Oberservation::findOrFail($id);
+        $oberservations = oberservation::findOrFail($id);
         return view('oberservation.show')->with('oberservation', $oberservations);
     }
 
@@ -59,7 +70,8 @@ class ListController extends Controller
      */
     public function edit($id)
     {
-        //
+        $oberservations = oberservation::findOrFail($id);
+        return view("oberservation.edit")->with('oberservation', $oberservations);
     }
 
     /**
@@ -71,7 +83,25 @@ class ListController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $oberservations = oberservation::findOrFail($id);
+
+        $data = $request->only([
+            'recruitment_year',
+            'application_start_date',
+            'application_deadline',
+            'project_name',
+            'country',
+            'agreement_agency',
+        ]);
+
+        // Update the model's attributes
+        $oberservations->fill($data);
+
+        // Save the changes to the database
+        $oberservations->save();
+
+        return redirect('oberservation');
+
     }
 
     /**
@@ -82,6 +112,8 @@ class ListController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $oberservations = oberservation::findOrFail($id);
+        $oberservations->delete();
+        return redirect('oberservation'); // 觸發一組路由 observations
     }
 }

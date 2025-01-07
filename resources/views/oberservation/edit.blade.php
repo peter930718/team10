@@ -9,8 +9,8 @@
 
 編輯特定一筆國際合作表單
 
-{!! Form::model($observation, ['method'=>'PATCH', 'action'=>['\App\Http\Controllers\ObservationsController@update', $observation->id]]) !!}
-    @include('observations.form', ['submitButtonText'=>"修改國際合作資料"])
+{!! Form::model($oberservation, ['method'=>'PATCH', 'action'=>['\App\Http\Controllers\ListController@update', $oberservation->id]]) !!}
+    @include('oberservation.form', ['submitButtonText'=>"修改國際合作資料"])
 {!! Form::close() !!}
 
 

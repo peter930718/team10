@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>國際合作計畫表單</title>
     <style>
-
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -36,22 +35,28 @@
             padding: 10px 15px;
             cursor: pointer;
             font-size: 16px;
+            border-radius: 8px; /* 增加圓角 */
+            transition: transform 0.2s ease, background-color 0.2s ease;
         }
 
         .nav-buttons button:hover {
             background-color: #555;
+            transform: scale(0.95); /* 凹進效果 */
         }
 
         .dropdown-content {
-            display: none;
             position: absolute;
             background-color: white;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
             z-index: 1;
             margin-top: 5px;
             min-width: 150px;
-            border-radius: 4px;
+            border-radius: 4px; /* 表單內容也有圓角 */
             overflow: hidden;
+            opacity: 0;
+            max-height: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease;
         }
 
         .dropdown-content a {
@@ -65,8 +70,10 @@
             background-color: #f1f1f1;
         }
 
-        .dropdown:hover .dropdown-content {
-            display: block;
+        .dropdown.open .dropdown-content {
+            opacity: 1;
+            transform: translateY(0);
+            max-height: 500px; /* 足夠的高度來顯示內容 */
         }
 
         footer {
@@ -86,7 +93,7 @@
     <h1>網頁首頁</h1>
     <div class="nav-buttons">
         <div class="dropdown">
-            <button>Menu 1</button>
+            <button onclick="toggleDropdown(this)">Menu 1</button>
             <div class="dropdown-content">
                 <a href="#">Option 1.1</a>
                 <a href="#">Option 1.2</a>
@@ -94,7 +101,7 @@
             </div>
         </div>
         <div class="dropdown">
-            <button>Menu 2</button>
+            <button onclick="toggleDropdown(this)">Menu 2</button>
             <div class="dropdown-content">
                 <a href="#">Option 2.1</a>
                 <a href="#">Option 2.2</a>
@@ -102,7 +109,7 @@
             </div>
         </div>
         <div class="dropdown">
-            <button>查詢合作表單</button>
+            <button onclick="toggleDropdown(this)">合作表單</button>
             <div class="dropdown-content">
                 <a href="#">Option 3.1</a>
                 <a href="#">Option 3.2</a>
@@ -110,11 +117,11 @@
             </div>
         </div>
         <div class="dropdown">
-            <button>關於我們</button>
+            <button onclick="toggleDropdown(this)">關於我們</button>
             <div class="dropdown-content">
-                <a href="#">Option 4.1</a>
+                <a href="#">D1114182061</a>
                 <a href="#">Option 4.2</a>
-                <a href="#">Option 4.3</a>
+                <a href="#">小小心得</a>
             </div>
         </div>
     </div>
@@ -128,6 +135,23 @@
 <footer>
     &copy; 2025由D1114182061。版權所有。
 </footer>
+
+<script>
+    function toggleDropdown(button) {
+        const dropdown = button.parentElement;
+        const isOpen = dropdown.classList.contains('open');
+
+        // 關閉其他打開的下拉式表單
+        document.querySelectorAll('.dropdown').forEach(d => {
+            d.classList.remove('open');
+        });
+
+        // 如果之前是關閉的，則打開當前表單
+        if (!isOpen) {
+            dropdown.classList.add('open');
+        }
+    }
+</script>
 
 </body>
 </html>
